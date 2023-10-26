@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#B4BABE</color>
+    <color name="purple_500">#B4BABE</color>
+    <color name="purple_700">#B4BABE</color>
+    <color name="teal_200">#B4BABE</color>
+    <color name="teal_700">#B4BABE</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="trans">#00FFFFFF</color>
+
+    <color name="main_theme">#AE1D14</color>
+    <color name="bg_progress">#F1F4F7</color>
+    <color name="text_gray">#858C8F </color>
+    <color name="text_black">#020A0D </color>
+    <color name="bg_step">#D5DADC </color>
+
+    <color name="text_nav_normal">#B4BABE </color>
+    <color name="bg_record">#FFF2F2 </color>
+    <color name="bg_record_edit">#D1E8F8 </color>
+    <color name="bg_record_data">#197DC5 </color>
+
+    <color name="record_degree_0">#53A7E3 </color>
+    <color name="record_degree_1">#5DC7A0 </color>
+    <color name="record_degree_2">#A3C939 </color>
+    <color name="record_degree_3">#E4C417 </color>
+    <color name="record_degree_4">#EB722E </color>
+    <color name="record_degree_5">#E73030 </color>
+</resources>

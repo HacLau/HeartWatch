@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_record"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/item_bg"
+        android:layout_width="328dp"
+        android:layout_height="136dp"
+        android:background="@drawable/bg_record_item"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/item_degree_color"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/bg_record_degree"
+        app:layout_constraintStart_toStartOf="@id/item_bg"
+        app:layout_constraintTop_toTopOf="@id/item_bg"
+        app:tint="@color/record_degree_3" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/item_edit"
+        android:layout_width="48dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/bg_record_edit"
+        android:text="@string/record_edit"
+        android:textColor="@color/bg_record_data"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@id/item_bg"
+        app:layout_constraintTop_toTopOf="@id/item_bg" />
+
+    <TextView
+        android:id="@+id/item_degree_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/record_max"
+        android:textColor="@color/record_degree_0"
+        android:textSize="14sp"
+        app:layout_constraintTop_toTopOf="@id/item_degree_color"
+        app:layout_constraintBottom_toBottomOf="@id/item_degree_color"
+        app:layout_constraintStart_toEndOf="@id/item_degree_color" />
+
+    <TextView
+        android:id="@+id/item_degree_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:lineHeight="16sp"
+        android:text="2023.10.20 14:00"
+        android:textColor="@color/text_nav_normal"
+        android:textSize="12sp"
+        app:layout_constraintTop_toTopOf="@id/item_degree_color"
+        app:layout_constraintBottom_toBottomOf="@id/item_degree_color"
+        app:layout_constraintStart_toEndOf="@id/item_degree_text" />
+
+    <ImageView
+        android:id="@+id/item_sys_bg"
+        android:layout_width="96dp"
+        android:layout_height="72dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bg_record_data"
+        app:layout_constraintBottom_toBottomOf="@id/item_bg"
+        app:layout_constraintEnd_toStartOf="@id/item_dias_bg"
+        app:layout_constraintStart_toStartOf="@id/item_bg" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:lineHeight="16sp"
+        android:text="@string/record_sys"
+        android:textColor="@color/text_gray"
+        android:textFontWeight="400"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@id/item_sys"
+        app:layout_constraintEnd_toEndOf="@id/item_sys_bg"
+        app:layout_constraintStart_toStartOf="@id/item_sys_bg" />
+
+    <TextView
+        android:id="@+id/item_sys"
+        android:layout_width="72dp"
+        android:layout_height="24dp"
+        android:layout_marginBottom="12dp"
+        android:gravity="center"
+        android:lineHeight="24sp"
+        android:text="100"
+        android:textColor="@color/bg_record_data"
+        android:textFontWeight="900"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/item_sys_bg"
+        app:layout_constraintEnd_toEndOf="@id/item_sys_bg"
+        app:layout_constraintStart_toStartOf="@id/item_sys_bg" />
+
+
+    <ImageView
+        android:id="@+id/item_dias_bg"
+        android:layout_width="96dp"
+        android:layout_height="72dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bg_record_data"
+        app:layout_constraintBottom_toBottomOf="@id/item_bg"
+        app:layout_constraintEnd_toEndOf="@id/item_bg"
+        app:layout_constraintStart_toEndOf="@id/item_sys_bg" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:lineHeight="16sp"
+        android:text="@string/record_dias"
+        android:textColor="@color/text_gray"
+        android:textFontWeight="400"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@id/item_dias"
+        app:layout_constraintEnd_toEndOf="@id/item_dias_bg"
+        app:layout_constraintStart_toStartOf="@id/item_dias_bg" />
+
+    <TextView
+        android:id="@+id/item_dias"
+        android:layout_width="72dp"
+        android:layout_height="24dp"
+        android:layout_marginBottom="12dp"
+        android:gravity="center"
+        android:lineHeight="24sp"
+        android:text="100"
+        android:textColor="@color/bg_record_data"
+        android:textFontWeight="900"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/item_dias_bg"
+        app:layout_constraintEnd_toEndOf="@id/item_dias_bg"
+        app:layout_constraintStart_toStartOf="@id/item_dias_bg" />
+</androidx.constraintlayout.widget.ConstraintLayout>

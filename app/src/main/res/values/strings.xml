@@ -1,0 +1,90 @@
+<resources>
+    <string name="app_name">HeartWatch</string>
+    <string name="title_home">Home</string>
+    <string name="title_record">Record</string>
+    <string name="title_news">News</string>
+    <string name="title_settings">Settings</string>
+
+    <string name="text_start">Start</string>
+    <string name="text_start_record">Start Record</string>
+    <string name="text_start_next">--></string>
+    <string name="text_skip">Skip</string>
+
+    <string name="text_nav_home">Home</string>
+    <string name="text_nav_record">Record</string>
+    <string name="text_nav_news">News</string>
+    <string name="text_nav_setting">Setting</string>
+
+    <string name="title_step_1">Heart \nguardian</string>
+    <string name="title_step_2">Health \nprediction</string>
+    <string name="title_step_3">Blood \npressure record</string>
+
+    <string name="content_step_1">Begin your journey to heart health by effortlessly recording and safeguarding your cardiac well-being.</string>
+    <string name="content_step_2">Anticipate the future of your health by mastering blood pressure trends through insightful tracking.</string>
+    <string name="content_step_3">Capture blood pressure data succinctly, gaining a comprehensive understanding of your health pulse.</string>
+    <string name="pressure_record">Record Blood Pressure</string>
+    <string name="home_top_content">Monitor your health with ease.</string>
+
+    <string name="record_new">Add</string>
+    <string name="record_more">More</string>
+    <string name="record_sys">Systolic</string>
+    <string name="record_dias">Diastolic</string>
+    <string name="record_unit">mmHg</string>
+
+    <string name="record_recent">24 hours</string>
+    <string name="record_week">This week</string>
+    <string name="record_month">This month</string>
+    <string name="record_last_month">Last month</string>
+    <string name="record_all">all</string>
+
+    <string name="record_max">Max</string>
+    <string name="record_min">Min</string>
+    <string name="record_avg">Avg</string>
+    <string name="record_edit">Edit</string>
+    <string name="record_more_record">More</string>
+    <string name="record_new_record">Add</string>
+
+
+    <string name="setting_clock">Clock</string>
+    <string name="setting_title">Setting</string>
+    <string name="setting_language">Language</string>
+    <string name="setting_shared">Shared</string>
+    <string name="setting_privacy">Privacy</string>
+    <string name="setting_policy">User Policy</string>
+    <string name="setting_contact">Contact</string>
+    <string name="setting_email">sadhka@gmail.com</string>
+    <string name="record_save">Save</string>
+    <string name="toast_record_new">There may be an error in the entered data, please check and re&#045;enter the correct systolic and diastolic values</string>
+    <string name="record_more_no">Your have no record</string>
+    <string name="record_more_to">Go Record</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="setting_year">Year</string>
+    <string name="setting_month">Month</string>
+    <string name="setting_day">Day</string>
+    <string name="setting_hour">Hour</string>
+    <string name="setting_second">Second</string>
+    <string name="setting_time">Time Setting</string>
+
+    <string name="record_degree_title_0">Hypotension</string>
+    <string name="record_degree_title_1">Normal</string>
+    <string name="record_degree_title_2">Elevated</string>
+    <string name="record_degree_title_3">Hypertension Stage 1</string>
+    <string name="record_degree_title_4">Hypertension Stage 2</string>
+    <string name="record_degree_title_5">Hypertensive crisis</string>
+
+    <string name="record_degree_content_0">（sys &lt;90 &#038; dia &lt;60）</string>
+    <string name="record_degree_content_1">（sys 90&#045;119 &#038; dia 60&#045;79）</string>
+    <string name="record_degree_content_2">（sys 120&#045;129 &#038; dia 60&#045;79）</string>
+    <string name="record_degree_content_3">（sys 130&#045;139 &#038; dia 80&#045;89）</string>
+    <string name="record_degree_content_4">（sys 140&#045;180 &#038; dia 90&#045;120）</string>
+    <string name="record_degree_content_5">（sys 180&#043; &#038; dia 120&#043;）</string>
+
+    <string name="record_degree_desc_0">Stay adequately hydrated and exercise regularly.</string>
+    <string name="record_degree_desc_1">Continue to maintain a healthy lifestyle.</string>
+    <string name="record_degree_desc_2">Pay attention to your diet and reduce salt intake.</string>
+    <string name="record_degree_desc_3">Improve your lifestyle, exercise regularly, and manage your diet.</string>
+    <string name="record_degree_desc_4">Consult a doctor early on, as medication may be necessary.</string>
+    <string name="record_degree_desc_5">Seek medical advice promptly and develop an appropriate treatment plan.</string>
+
+
+</resources>

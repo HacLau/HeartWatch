@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/record_new_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_progress"
+    tools:context=".view.RecordNewActivity">
+
+    <com.shunlin.heartwatch.ui.TitleView
+        android:id="@+id/record_new_title"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/record_new" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_time"
+        android:layout_width="330dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_setting_item"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/record_new_title">
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:textColor="@color/text_black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/setting"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginEnd="12dp"
+            android:src="@mipmap/ic_record_new_next"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_pas"
+        android:layout_width="330dp"
+        android:layout_height="283dp"
+        android:layout_marginTop="22dp"
+        android:background="@drawable/bg_record_item"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cl_time">
+
+        <LinearLayout
+            android:id="@+id/ll_sys"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/systolic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:lineHeight="22sp"
+                android:text="@string/record_sys"
+                android:textColor="@color/text_black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/systolic_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:lineHeight="18sp"
+                android:text="/mmHg"
+                android:textColor="@color/text_gray"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+
+        <com.shunlin.heartwatch.ui.HorizontalPicker
+            android:id="@+id/systolic_picker"
+            android:layout_width="302dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_picker"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_sys"
+            app:normalTextColor="@color/text_gray"
+            app:selectedTextColor="@color/record_degree_0" />
+
+        <ImageView
+            android:id="@+id/systolic_scale"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@mipmap/ic_record_new_heart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/systolic_picker"
+            app:tint="@color/record_degree_0" />
+
+        <View
+            android:id="@+id/split_line"
+            android:layout_width="302dp"
+            android:layout_height="1dp"
+            android:background="@color/bg_progress"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/ll_dias"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/split_line">
+
+            <TextView
+                android:id="@+id/diastolic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:lineHeight="22sp"
+                android:text="@string/record_dias"
+                android:textColor="@color/text_black"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/split_line" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:lineHeight="18sp"
+                android:text="/mmHg"
+                android:textColor="@color/text_gray"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/diastolic"
+                app:layout_constraintStart_toEndOf="@id/diastolic" />
+        </LinearLayout>
+
+        <com.shunlin.heartwatch.ui.HorizontalPicker
+            android:id="@+id/diastolic_picker"
+            android:layout_width="302dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_picker"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_dias"
+            app:normalTextColor="@color/text_gray"
+            app:selectedTextColor="@color/record_degree_0" />
+
+        <ImageView
+            android:id="@+id/diastolic_scale"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@mipmap/ic_record_new_heart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/diastolic_picker"
+            app:tint="@color/record_degree_0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_degree"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_record_item"
+        android:paddingBottom="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cl_pas">
+
+        <TextView
+            android:id="@+id/degree_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:lineHeight="24sp"
+            android:text="@string/record_degree_title_1"
+            android:textColor="@color/record_degree_1"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/degree_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:lineHeight="16sp"
+            android:text="@string/record_degree_content_1"
+            android:textColor="@color/record_degree_1"
+            android:textFontWeight="400"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/degree_title" />
+
+        <TextView
+            android:id="@+id/degree_des"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@string/record_degree_desc_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/degree_content" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ll_degree"
+            android:layout_width="302dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/degree_des">
+
+            <ImageView
+                android:id="@+id/degree_0"
+                android:layout_width="36dp"
+                android:layout_height="10dp"
+                android:src="@drawable/bg_rectangle_degree"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:tint="@color/record_degree_0" />
+
+            <ImageView
+                android:id="@+id/degree_1"
+                android:layout_width="36dp"
+                android:layout_height="10dp"
+                android:src="@drawable/bg_rectangle_degree"
+                app:layout_constraintEnd_toStartOf="@id/degree_2"
+                app:layout_constraintStart_toEndOf="@id/degree_0"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:tint="@color/record_degree_1" />
+
+            <ImageView
+                android:id="@+id/degree_2"
+                android:layout_width="36dp"
+                android:layout_height="10dp"
+                android:src="@drawable/bg_rectangle_degree"
+                app:layout_constraintEnd_toStartOf="@id/degree_3"
+                app:layout_constraintStart_toEndOf="@id/degree_1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:tint="@color/record_degree_2" />
+
+            <ImageView
+                android:id="@+id/degree_3"
+                android:layout_width="36dp"
+                android:layout_height="10dp"
+                android:src="@drawable/bg_rectangle_degree"
+                app:layout_constraintEnd_toStartOf="@id/degree_4"
+                app:layout_constraintStart_toEndOf="@id/degree_2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:tint="@color/record_degree_3" />
+
+            <ImageView
+                android:id="@+id/degree_4"
+                android:layout_width="36dp"
+                android:layout_height="10dp"
+                android:src="@drawable/bg_rectangle_degree"
+                app:layout_constraintEnd_toStartOf="@id/degree_5"
+                app:layout_constraintStart_toEndOf="@id/degree_3"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:tint="@color/record_degree_4" />
+
+            <ImageView
+                android:id="@+id/degree_5"
+                android:layout_width="36dp"
+                android:layout_height="10dp"
+                android:src="@drawable/bg_rectangle_degree"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:tint="@color/record_degree_5" />
+
+            <ImageView
+                android:id="@+id/degree_scale"
+                android:layout_width="4dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/ic_record_new_degree"
+                app:layout_constraintEnd_toEndOf="@id/degree_0"
+                app:layout_constraintStart_toStartOf="@id/degree_0"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/record_new_save"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="72dp"
+        android:background="@drawable/bg_record_edit"
+        android:lineHeight="20sp"
+        android:text="@string/record_save"
+        android:textColor="@color/bg_record_data"
+        android:textFontWeight="900"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cl_degree" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

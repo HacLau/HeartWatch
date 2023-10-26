@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_progress"
+    tools:context=".view.ContentActivity">
+
+    <com.shunlin.heartwatch.ui.TitleView
+        android:id="@+id/content_title"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="咨询" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scrollbars="none"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/from"
+        app:layout_constraintTop_toBottomOf="@id/content_title"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/content_news"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/content_title">
+
+            <ImageView
+                android:id="@+id/content_news_bg"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@drawable/bg_news_item"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/content_news_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="16dp"
+                android:src="@mipmap/ic_news_record_icon"
+                app:layout_constraintStart_toStartOf="@id/content_news_bg"
+                app:layout_constraintTop_toTopOf="@id/content_news_bg" />
+
+            <TextView
+                android:id="@+id/content_news_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:ellipsize="end"
+                android:lineHeight="20sp"
+                android:maxLines="3"
+                android:textColor="@color/text_black"
+                android:textFontWeight="500"
+                android:textSize="14sp"
+                android:layout_marginEnd="6dp"
+                app:layout_constraintTop_toTopOf="@id/content_news_icon"
+                app:layout_constraintStart_toEndOf="@id/content_news_icon"
+                app:layout_constraintEnd_toStartOf="@id/item_image"/>
+
+            <ImageView
+                android:id="@+id/item_image"
+                android:layout_width="96dp"
+                android:layout_height="80dp"
+                app:layout_constraintBottom_toBottomOf="@id/content_news_bg"
+                app:layout_constraintEnd_toEndOf="@id/content_news_bg" />
+
+            <TextView
+                android:id="@+id/content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:lineHeight="24sp"
+                android:textColor="@color/text_black"
+                android:textFontWeight="400"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/content_news_bg" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/from"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:lineHeight="12sp"
+        android:textColor="@color/text_gray"
+        android:textFontWeight="400"
+        android:textSize="10sp"
+        android:autoLink="web"
+        android:layout_marginBottom="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    <WebView
+        android:id="@+id/web_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="16dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/content_title" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
