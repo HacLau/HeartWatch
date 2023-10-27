@@ -44,7 +44,7 @@ class RecordFragment : BaseFragment<FragmentRecordBinding, FragmentViewModel>() 
         binding.recordTopFilterBg.setOnClickListener {
             if (viewModel.recordPopupWindow == null)
                 viewModel.recordPopupWindow = RecordPopupWindow(context = this.requireActivity(), onClick = {
-                    "setOnClickListener ${it}".logE()
+
                     if (viewModel.recordType == it) {
                         return@RecordPopupWindow
                     }
@@ -86,9 +86,7 @@ class RecordFragment : BaseFragment<FragmentRecordBinding, FragmentViewModel>() 
             CoroutineScope(Dispatchers.IO + SupervisorJob()).launch {
                 var avgSys = 0
                 var avgDia = 0
-                var list = RecordDatabase.getDatabase(requireActivity()).recordDao().queryAll()
-                "getRecordData = ${list.size}  typoe =  ${viewModel.recordType}".logE()
-                list.filter {
+                RecordDatabase.getDatabase(requireActivity()).recordDao().queryAll().filter {
 
                     when (viewModel.recordType) {
                         RecordType.RECENT -> {
@@ -112,18 +110,15 @@ class RecordFragment : BaseFragment<FragmentRecordBinding, FragmentViewModel>() 
                         }
                     }
                 }.let {
-                    "getRecordData = ${it.size}  }".logE()
-                    val list2 = it.subList(0, (it.size > 5).yes { 5 }.other { it.size })
-                    list2.forEach { record ->
-                            add(record)
+                    val list = it.subList(0, (it.size > 5).yes { 5 }.other { it.size })
+                    list.forEach { record ->
                             avgSys += record.sys
                             avgDia += record.dias
                         }
-                    "getRecordData = ${list2.size}  }".logE()
                     CoroutineScope(Dispatchers.Main + SupervisorJob()).launch {
-                        binding.recordTopSys.text = list2.isEmpty().yes { "0" }.other { "${avgSys.div(list2.size)}" }
-                        binding.recordTopDias.text = list2.isEmpty().yes { "0" }.other { "${avgDia.div(list2.size)}" }
-                        viewModel.recordAdapter.setList(list2)
+                        binding.recordTopSys.text = list.isEmpty().yes { "0" }.other { "${avgSys.div(list.size)}" }
+                        binding.recordTopDias.text = list.isEmpty().yes { "0" }.other { "${avgDia.div(list.size)}" }
+                        viewModel.recordAdapter.setList(list)
                     }
                 }
             }

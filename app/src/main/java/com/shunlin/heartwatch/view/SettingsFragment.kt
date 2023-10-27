@@ -8,6 +8,7 @@ import com.shunlin.heartwatch.BuildConfig
 import com.shunlin.heartwatch.R
 import com.shunlin.heartwatch.base.BaseFragment
 import com.shunlin.heartwatch.databinding.FragmentSettingsBinding
+import com.shunlin.heartwatch.helper.Contacts
 import com.shunlin.heartwatch.model.PageType
 import com.shunlin.heartwatch.vm.FragmentViewModel
 
@@ -22,10 +23,10 @@ class SettingsFragment : BaseFragment<FragmentSettingsBinding, FragmentViewModel
 
     override fun initData() {
         binding.settingPrivacyBg.setOnClickListener {
-            startContentActivity(PageType.Content.url, title = getString(R.string.setting_privacy), url = "https://www.jianshu.com/p/bfa7bf5c6beb")
+            startContentActivity(PageType.Content.url, title = getString(R.string.setting_privacy), url = Contacts.privacy)
         }
         binding.settingPolicyBg.setOnClickListener {
-            startContentActivity(PageType.Content.url, title = getString(R.string.setting_policy), url = "https://blog.csdn.net/AdrianAndroid/article/details/128936822")
+            startContentActivity(PageType.Content.url, title = getString(R.string.setting_policy), url = Contacts.policy)
         }
         binding.settingSharedBg.setOnClickListener {
             kotlin.runCatching {
