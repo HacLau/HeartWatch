@@ -15,7 +15,9 @@ import com.shunlin.heartwatch.ui.DateAndTimePopupWindow
 import com.shunlin.heartwatch.helper.DateKt
 import com.shunlin.heartwatch.helper.dp2px
 import com.shunlin.heartwatch.helper.logE
+import com.shunlin.heartwatch.helper.other
 import com.shunlin.heartwatch.helper.toast
+import com.shunlin.heartwatch.helper.yes
 import com.shunlin.heartwatch.vm.HeartViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -105,33 +107,37 @@ class RecordNewActivity : BaseActivity<ActivityRecordNewBinding, HeartViewModel>
 
     private fun systolicOnMove(value: String, index: Int) {
         recordEntity.sys = value.toInt()
-        recordEntity.level = when (value.toInt()) {
-            in 20..<90 -> {
-                0
-            }
+        recordEntity.level = (recordEntity.dias in 20..<60).yes {
+            0
+        }.other {
+            when (value.toInt()) {
+                in 20..<90 -> {
+                    0
+                }
 
-            in 90..<120 -> {
-                1
-            }
+                in 90..<120 -> {
+                    1
+                }
 
-            in 120..<130 -> {
-                2
-            }
+                in 120..<130 -> {
+                    2
+                }
 
-            in 130..<140 -> {
-                3
-            }
+                in 130..<140 -> {
+                    3
+                }
 
-            in 140..180 -> {
-                4
-            }
+                in 140..180 -> {
+                    4
+                }
 
-            in 181..300 -> {
-                5
-            }
+                in 181..300 -> {
+                    5
+                }
 
-            else -> {
-                recordEntity.level
+                else -> {
+                    recordEntity.level
+                }
             }
         }
         moveDegreeScale()
@@ -139,59 +145,60 @@ class RecordNewActivity : BaseActivity<ActivityRecordNewBinding, HeartViewModel>
 
     private fun diastolicOnMove(value: String, index: Int) {
         recordEntity.dias = value.toInt()
-        recordEntity.level = when (value.toInt()) {
-            in 20..<60 -> {
-                when (recordEntity.sys) {
-                    in 20..<90 -> 0
-                    else -> recordEntity.level
+        recordEntity.level = (recordEntity.sys in 20..<90).yes {
+            0
+        }.other {
+            when (value.toInt()) {
+                in 20..<60 -> {
+                    0
                 }
-            }
 
-            in 60..<80 -> {
-                when (recordEntity.sys) {
-                    in 90..119 -> {
-                        1
+                in 60..<80 -> {
+                    when (recordEntity.sys) {
+                        in 90..119 -> {
+                            1
+                        }
+
+                        in 120..129 -> {
+                            2
+                        }
+
+                        else -> {
+                            recordEntity.level
+                        }
                     }
+                }
 
-                    in 120..129 -> {
-                        2
+                in 80..<90 -> {
+                    when (recordEntity.sys) {
+                        in 130..<140 -> 3
+                        else -> recordEntity.level
                     }
+                }
 
-                    else -> {
-                        recordEntity.level
+                in 90..120 -> {
+                    when (recordEntity.sys) {
+                        in 140..<180 -> 4
+                        else -> recordEntity.level
                     }
                 }
-            }
 
-            in 80..<90 -> {
-                when (recordEntity.sys) {
-                    in 130..<140 -> 3
-                    else -> recordEntity.level
+                in 121..300 -> {
+                    when (recordEntity.sys) {
+                        in 181..320 -> 5
+                        else -> recordEntity.level
+                    }
                 }
-            }
 
-            in 90..120 -> {
-                when (recordEntity.sys) {
-                    in 140..<180 -> 4
-                    else -> recordEntity.level
+                else -> {
+                    recordEntity.level
                 }
-            }
-
-            in 121..300 -> {
-                when (recordEntity.sys) {
-                    in 181..320 -> 5
-                    else -> recordEntity.level
-                }
-            }
-
-            else -> {
-                recordEntity.level
             }
         }
         moveDegreeScale()
     }
 
-    fun moveDegreeScale() {
+    private fun moveDegreeScale() {
         var color = R.color.record_degree_0
         var title = ""
         var content = ""

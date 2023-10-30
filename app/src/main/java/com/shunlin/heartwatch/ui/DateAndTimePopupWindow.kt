@@ -8,8 +8,10 @@ import android.widget.PopupWindow
 import com.shunlin.heartwatch.R
 import com.shunlin.heartwatch.helper.DateKt
 import com.shunlin.heartwatch.helper.logE
+import com.shunlin.heartwatch.helper.other
 import com.shunlin.heartwatch.helper.toTime
 import com.shunlin.heartwatch.helper.toast
+import com.shunlin.heartwatch.helper.yes
 
 class DateAndTimePopupWindow(
     private val context: Context,
@@ -112,8 +114,8 @@ class DateAndTimePopupWindow(
     }
 
     private fun setDay() {
-        mDayList = getMutList(1, DateKt.getDay(mYearText.toInt(), mMonthText.toInt()))
-        mDay.setData(mDayList, mDayList.indexOf(mDayText.toInt().toTime()))
+        mDayList = getMutList(1, DateKt.getDay(mYearText.toInt(), mMonthText.toInt() + 1))
+        mDay.setData(mDayList, (mDayText.toInt() > mDayList.size).yes { mDayList.size - 1 }.other { mDayList.indexOf(mDayText.toInt().toTime()) })
     }
 
     private fun getMutList(startNumber: Int, endNumber: Int): MutableList<String> {
